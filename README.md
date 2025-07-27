@@ -3,7 +3,30 @@
 This extension can be used to parse hex-encoded APDU packets
 and display in a formatted way.
 
-This is a beta version. Other information in this file is useless.
+This is a beta version. See next two sections, other information in this file is useless.
+
+## How to install beta release
+
+### Step 1
+
+Copy .vsix file from `releases/myfirstextension-1.0.0-beta.vsix` to `.vscode/extensions`
+folder. The `.vscode/extensions` folder will change depending on your OS:
+
+- Windows: `%USERPROFILE%\.vscode\extensions`
+- macOS: `~/.vscode/extensions`
+- Linux: `~/.vscode/extensions`
+
+### Step 2
+
+- Open `Extensions` view in `VSCode`
+- In options, select `Install from VSIX...`
+- Select the `.vsix` file from `.vscode/extensions`
+
+## How to use the plugin
+
+- In your editor, select an APDU packet
+- Open command palette (Press `Ctrl` + `Shift` + `P`)
+- Type `MyFirstExtension` and press `Enter`
 
 ## Features
 
