@@ -1,6 +1,9 @@
-# myfirstextension README
+# APDU Parser Extension
 
-This is the README for your extension "myfirstextension". After writing up a brief description, we recommend including the following sections.
+This extension can be used to parse hex-encoded APDU packets
+and display in a formatted way.
+
+This is a beta version. Other information in this file is useless.
 
 ## Features
 
