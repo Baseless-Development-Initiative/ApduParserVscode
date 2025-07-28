@@ -9,7 +9,7 @@ This is a beta version. See next two sections, other information in this file is
 
 ### Step 1
 
-Copy .vsix file from `releases/myfirstextension-1.0.0-beta.vsix` to `.vscode/extensions`
+Copy .vsix file from `releases/ApduParser-1.0.0-beta.vsix` to `.vscode/extensions`
 folder. The `.vscode/extensions` folder will change depending on your OS:
 
 - Windows: `%USERPROFILE%\.vscode\extensions`
@@ -26,7 +26,7 @@ folder. The `.vscode/extensions` folder will change depending on your OS:
 
 - In your editor, select an APDU packet
 - Open command palette (Press `Ctrl` + `Shift` + `P`)
-- Type `MyFirstExtension` and press `Enter`
+- Type `ApduParser-Parse` and press `Enter`
 
 ## Features
 
