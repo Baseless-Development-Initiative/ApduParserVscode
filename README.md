@@ -3,7 +3,7 @@
 This extension can be used to parse hex-encoded APDU packets
 and display in a formatted way.
 
-This is a beta version. See next two sections, other information in this file is useless.
+This is a beta version. 
 
 ## How to install beta release
 
@@ -28,6 +28,67 @@ folder. The `.vscode/extensions` folder will change depending on your OS:
 - Open command palette (Press `Ctrl` + `Shift` + `P`)
 - Type `ApduParser-Parse` and press `Enter`
 
+## Configuring your proprietary APDUs
+
+The extension can be configured with your proprietary definitions of APDUs as well.
+To do this, simply create a file named `apdu_config.json` in `.vscode` directory of the open workspace.
+
+Note that, if multiple folders are open in a workspace, the extension will use the config file from the first folder only.
+
+Example of JSON file:
+
+```
+{
+    "CLA" : {
+        "0x80": {
+            "Name": "Proprietary",
+            "INS": {
+                "INSval1": {
+                    "Name": "Proprietary INS Name 1"
+                },
+                "INSval2": {
+                    "Name": "Proprietary INS Name 2"
+                },
+                "INSval3": {
+                    "Name": "Proprietary INS Name 3",
+                    "P2": [
+                        {
+                            "Name": "Name for P2 for INSval3",
+                            "val": "0x33"
+                        },
+                        {
+                            "Name": "Another Name for P2 for INSval3",
+                            "val": "0x34"
+                        }
+                    ]
+                },
+                "INSval4": {
+                    "Name": "Proprietary INS Name 4",
+                    "P1": [
+                        {
+                        "Name": "Name for P1 for INSval4",
+                        "val": "0x43"
+                        }
+                    ]
+                }
+            }
+        },
+        "0x00": {
+            "Name": "Interindustry"
+        }
+    }
+}
+```
+
+## Limitations
+
+- This extension will parse only C-APDUs. Support for parsing R-APDUs is not integrated
+
+## Upcoming features
+
+- Extension will add support to configure supported TLVs as well for commands described in JSON file
+
+<!-- 
 ## Features
 
 Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
@@ -94,4 +155,4 @@ You can author your README using Visual Studio Code. Here are some useful editor
 * [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
 * [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
 
-**Enjoy!**
+**Enjoy!** -->
