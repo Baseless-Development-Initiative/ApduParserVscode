@@ -1,6 +1,6 @@
 {
-  "name": "myfirstextension",
-  "displayName": "MyFirstExtension",
+  "name": "ApduParser",
+  "displayName": "ApduParser",
   "description": "Testing how to create a VSCode extension",
   "version": "1.0.0-beta",
   "repository": {"type": "git", "url": "https://github.com/Baseless-Development-Initiative/ApduParserVscode"},
@@ -15,8 +15,12 @@
   "contributes": {
     "commands": [
       {
-        "command": "myfirstextension.myfirstextension",
-        "title": "MyFirstExtension"
+        "command": "apduParser.parse",
+        "title": "ApduParser-Parse"
+      },
+      {
+        "command": "apduParser.update",
+        "title": "ApduParser-Update"
       }
     ]
   },

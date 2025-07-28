@@ -15,8 +15,14 @@
  */
 
 import * as vscode from 'vscode';
+import { APDU, ParseAPDUHeader, ApduListUpdate } from "./apdu_defs";
 
 const APDU_HEADER_SIZE:number = 4
+
+function getZeroPaddedHexByteFromInt(num:number): string
+{
+    return num.toString(16).toUpperCase().padStart(2, "0");
+}
 
 function ApduParseHeader(header:number[]): string
 {
@@ -25,10 +31,11 @@ function ApduParseHeader(header:number[]): string
         vscode.window.showErrorMessage("Invalid APDU Header");
         return header_string;
     }
-    header_string += "CLA: " + header[0].toString(16).toUpperCase().padStart(2, "0") + "\n";
-    header_string += "INS: " + header[1].toString(16).toUpperCase().padStart(2, "0") + "\n";
-    header_string += "P1:  " + header[2].toString(16).toUpperCase().padStart(2, "0") + "\n";
-    header_string += "P2:  " + header[3].toString(16).toUpperCase().padStart(2, "0") + "\n";
+    let apdu:APDU = ParseAPDUHeader(header[0], header[1], header[2], header[3]);
+    header_string += "CLA: " + getZeroPaddedHexByteFromInt(apdu.cla.val) + " (" + apdu.cla.name + ") " + "\n";
+    header_string += "INS: " + getZeroPaddedHexByteFromInt(apdu.ins.val) + " (" + apdu.ins.name + ") " + "\n";
+    header_string += "P1:  " + getZeroPaddedHexByteFromInt(apdu.p1.val) + " (" + apdu.p1.name + ") " + "\n";
+    header_string += "P2:  " + getZeroPaddedHexByteFromInt(apdu.p2.val) + " (" + apdu.p2.name + ") " + "\n";
     return header_string;
 }
 
@@ -73,6 +80,7 @@ function ApduParsePayload(payload:number[], apdu_length:number): string
 
 export async function ApduParser(input: string)
 {
+    ApduListUpdate();
     let output_values:number[] = [];
     let input_len:number = input.length;
     let iterator:number = 0;
