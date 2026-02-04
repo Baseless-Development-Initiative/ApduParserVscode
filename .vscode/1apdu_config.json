@@ -1,0 +1,40 @@
+{
+    "CLA" : {
+        "0x80": {
+            "Name": "Proprietary",
+            "INS": {
+                "INSval1": {
+                    "Name": "Proprietary INS Name 1"
+                },
+                "INSval2": {
+                    "Name": "Proprietary INS Name 2"
+                },
+                "INSval3": {
+                    "Name": "Proprietary INS Name 3",
+                    "P2": [
+                        {
+                            "Name": "Name for P2 for INSval3",
+                            "val": "0x33"
+                        },
+                        {
+                            "Name": "Another Name for P2 for INSval3",
+                            "val": "0x34"
+                        }
+                    ]
+                },
+                "INSval4": {
+                    "Name": "Proprietary INS Name 4",
+                    "P1": [
+                        {
+                        "Name": "Name for P1 for INSval4",
+                        "val": "0x43"
+                        }
+                    ]
+                }
+            }
+        },
+        "0x00": {
+            "Name": "Interindustry"
+        }
+    }
+}

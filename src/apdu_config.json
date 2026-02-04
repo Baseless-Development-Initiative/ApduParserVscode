@@ -1,0 +1,24 @@
+{
+    "CLA" : {
+        "0x00": {
+            "Name": "Interindustry",
+            "INS": {
+                "0xB0": {
+                    "Name": "Read Binary"
+                },
+                "0xD0": {
+                    "Name": "Write Binary"
+                },
+                "0xD6": {
+                    "Name": "Update Binary"
+                },
+                "0x0E": {
+                    "Name": "Erase Binary"
+                }
+            }
+        },
+        "0x80": {
+            "Name": "Proprietary"
+        }
+    }
+}
